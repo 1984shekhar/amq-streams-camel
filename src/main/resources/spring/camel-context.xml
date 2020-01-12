@@ -8,7 +8,7 @@
         <route id="producer-route">
             <from id="route-timer" uri="timer:foo?period=20000"/>
             <setBody id="_setBody1">
-                <simple>Message creation: ${date:now:yyyy-MM-dd HH:mm:ss}</simple>
+                <simple>Message Body: ${date:now:yyyy-MM-dd HH:mm:ss}</simple>
             </setBody>
             <to id="_to1" uri="kafka:{{kafka.topic}}"/>
             <log id="_producer_route_logs" message="headers ${in.headers}; body: ${body}"/>
